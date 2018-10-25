@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+      // make a jquery ajax request
+      const myRequest =
+      $.ajax({
+        method: "post"
+        , url: "http://localhost:3000/ajax"
+        ,dataType: "json"
+        , data: {
+          name: "brightbug"
+        }
+      })
+      // jquery ajax returns a promise
+      myRequest.then( (response, status, xmlHttpObj) => {
+        // console.log( JSON.stringify(res.data, null, 2) )
+        console.log(`${response}, ${status}, ${JSON.stringify(xmlHttpObj, null, 2)}`)
+      } )
+    </script>
+  </body>
+</html>
